@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @EqualsAndHashCode
@@ -11,6 +12,14 @@ import java.util.List;
 @Getter
 public class Money {
 
-    private final List<>
+    private final List<MoneyAudit> history = new ArrayList<>();
+
+    public Money(final MoneyAudit history) {
+        this.history.add(history);
+    }
+
+    public void addHistory(MoneyAudit history){
+        this.history.add(history);
+    }
 
 }
